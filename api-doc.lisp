@@ -6,8 +6,10 @@
            #:read-api-json
            #:make-api-doc-from-json
            #:make-call-parameters
-           #:make-call-url)
-  )
+           #:make-call-url
+
+           #:*api-root-url*
+           #:*api-json-file-path*))
 
 (in-package #:github-api-doc)
 
@@ -71,6 +73,7 @@ object"
           (cddr api-detail))
     ))
 
+;;:= need to handle :id {id} <id> slots type
 (defun parse-api (str)
   "give an api entry, return (method format-control slots)"
   (declare (string str))
